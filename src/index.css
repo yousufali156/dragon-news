@@ -20,3 +20,9 @@
 *{
     font-family: "poppins", sans-serif;
 }
+
+a.active{
+  color: aqua;
+  @apply bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-semibold text-1xl
+
+}

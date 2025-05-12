@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from '../Components/Header';
 import { Outlet } from 'react-router';
-import LatestNews from '../Components/LatestNews';
+
 import Navbar from '../Components/Navbar';
-
-
+import LatestNews from '../Components/LatestNews';
+import LeftAside from '../Components/HomeLayout/LeftAside';
+import RightAside from '../Components/HomeLayout/RightAside';
 
 
 const HomeLayouts = () => {
@@ -16,21 +17,20 @@ const HomeLayouts = () => {
             <section className='w-11/12 mx-auto my-3'>
                 <LatestNews></LatestNews>
             </section>
-       <nav>
-        <Navbar></Navbar>
-       </nav>
-            <main>
-                <button className='btn btn-primary'>Click me</button>
+            <nav className='w-11/12 mx-auto my-3'>
+                <Navbar></Navbar>
+            </nav>
 
-                <section className="leftNav">
-
-                </section>
-                <section className="main">
+            <main className='w-11/12 mx-auto my-3 grid grid-cols-12'>
+                <aside className='col-span-3'>
+                    <LeftAside></LeftAside>
+                </aside>
+                <section className="main col-span-6">
                     <Outlet></Outlet>
                 </section>
-                <section className="rightNav">
-                    
-                </section>
+                <aside className='col-span-3'>
+                    <RightAside></RightAside>
+                </aside>
             </main>
         </div>
     );

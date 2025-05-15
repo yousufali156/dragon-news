@@ -1,74 +1,156 @@
-// src/components/Register.jsx
-import React from 'react';
-import logo from '../assets/Dragon-logo.png';
+
+import React, { use } from 'react';
+import { Link } from 'react-router';
+import logo from '../assets/Dragon-logo .png';
+import { AuthContext } from '../Firebase/Provider/AuthProvider';
 
 const Register = () => {
+
+  const { createUser } = use(AuthContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    const form = e.target;
+    const firstName = form.firstName.value;
+    const lastName = form.lastName.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
+    console.log({ firstName, lastName, photoURL, email, password, confirmPassword });
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage)
+
+      });
+
+  };
+
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-500 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-500 px-4 py-4">
       <div className="bg-white rounded-3xl shadow-xl overflow-hidden w-full max-w-4xl p-8 sm:p-12 flex flex-col lg:flex-row relative">
-        <div className="lg:w-1/2 flex flex-col justify-center items-center p-4 lg:p-8 bg-gradient-to-r from-blue-600 to-indigo-500 text-white rounded-2xl lg:rounded-none">
-          <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
-            <img src={logo} alt="JobFinder Logo" className="w-10 h-10" />
+
+        {/* Left Logo Panel */}
+        <div className="lg:w-1/2 flex rounded-2xl flex-col justify-center items-center p-4 lg:p-8 bg-gradient-to-r from-blue-600 to-indigo-500 text-white lg:rounded-3xl">
+          <div className="flex rounded-full items-center justify-center mb-4 glow-border">
+            <img src={logo} alt="Logo" className="w-full rounded-3xl" />
           </div>
-          <h2 className="text-2xl font-semibold">Welcome to Registration</h2>
+          <h2 className="text-2xl text-center font-semibold">Welcome to Registration</h2>
         </div>
 
+        {/* Right Form Panel */}
         <div className="lg:w-1/2 mt-8 lg:mt-0 lg:pl-8">
-          <h2 className="text-2xl font-semibold text-blue-600 mb-6 text-center">Sign Up to JobFinder</h2>
 
-          <form className="space-y-4">
+          <form onSubmit={handleRegister} className="space-y-4">
+            <h2 className="text-2xl font-semibold text-center text-indigo-600">Create Your Account</h2>
+
+            {/* Name Fields */}
             <div className="flex gap-4">
+              <div className="w-1/2">
+                <label htmlFor="firstName" className="block text-sm font-medium mb-1">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  placeholder="First Name"
+                  className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  required
+                />
+              </div>
+
+              <div className="w-1/2">
+                <label htmlFor="lastName" className="block text-sm font-medium mb-1">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  placeholder="Last Name"
+                  className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  required
+                />
+              </div>
+            </div>
+
+            {/* Photo URL */}
+            <div>
+              <label htmlFor="photoURL" className="block text-sm font-medium mb-1">Photo URL</label>
               <input
-                type="text"
-                placeholder="First Name"
-                className="w-1/2 px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className="w-1/2 px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                type="url"
+                name="photoURL"
+                id="photoURL"
+                placeholder="Enter Your Photo URL"
+                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
 
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
+            {/* Email */}
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
+              />
+            </div>
 
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
+            {/* Password */}
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium mb-1">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
+              />
+            </div>
 
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
+            {/* Confirm Password */}
+            <div>
+              <label htmlFor="confirmPassword" className="block text-sm font-medium mb-1">Confirm Password</label>
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
+              />
+            </div>
 
+            {/* Terms Checkbox */}
             <div className="flex items-center text-sm text-gray-500">
-              <input type="checkbox" className="mr-2" required />
-              <span>I accept the Terms of Use and Privacy Policy</span>
+              <input type="checkbox" id="terms" className="mr-2" required />
+              <label htmlFor="terms">I accept the Terms of Use and Privacy Policy</label>
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-2 px-4 rounded-full text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-indigo-500 hover:to-blue-500 transition"
+              className="block w-full text-center py-2 px-4 rounded-full text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-indigo-500 hover:to-blue-500 transition"
             >
               Register
             </button>
 
+            {/* Login Link */}
             <p className="text-sm text-center text-gray-500 mt-4">
-              Already a member? <a href="#" className="text-blue-500 hover:underline">Sign In</a>
+              Already a member? <Link to="/auth/login" className="text-blue-500 hover:underline">Login</Link>
             </p>
           </form>
+
         </div>
       </div>
     </div>

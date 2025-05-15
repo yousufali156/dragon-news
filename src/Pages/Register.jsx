@@ -1,33 +1,56 @@
 
-import React, { use } from 'react';
-import { Link } from 'react-router';
+import React, { use, useState } from 'react';
+import { Link, useNavigate } from 'react-router';
 import logo from '../assets/Dragon-logo .png';
 import { AuthContext } from '../Firebase/Provider/AuthProvider';
 
 const Register = () => {
 
-  const { createUser } = use(AuthContext);
+  const { createUser, setUser, updateUser } = use(AuthContext);
+  const [firstNameError, setfirstNameError] = useState("");
+
+  const navigate=useNavigate();
 
   const handleRegister = (e) => {
+
     e.preventDefault();
-    console.log(e.target);
+    // console.log(e.target);
     const form = e.target;
     const firstName = form.firstName.value;
+
+    if (firstName.length < 4) {
+      setfirstNameError('Name should be four character ');
+      return;
+    } else {
+      setfirstNameError("");
+    }
+
     const lastName = form.lastName.value;
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
     const confirmPassword = form.confirmPassword.value;
-    console.log({ firstName, lastName, photoURL, email, password, confirmPassword });
+    // console.log({ firstName, lastName, photoURL, email, password, confirmPassword });
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
+        updateUser({ displayName: firstName, photoURL: photoURL })
+        .then (()=>{
+          setUser({...user, displayName: firstName, photoURL: photoURL });
+          navigate("/")
+        }).catch((error)=>{
+          console.log(error);
+          setUser(user);
+        });
+       
+
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage)
+        alert(errorMessage);
 
       });
 
@@ -64,6 +87,9 @@ const Register = () => {
                   className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   required
                 />
+
+                {firstNameError && <p className='text-xs text-error'>{firstNameError}</p>}
+
               </div>
 
               <div className="w-1/2">

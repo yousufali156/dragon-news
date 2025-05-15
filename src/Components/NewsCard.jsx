@@ -1,5 +1,6 @@
 import { FaEye, FaRegShareSquare, FaStar } from 'react-icons/fa';
 import { CiBookmarkCheck } from "react-icons/ci";
+import { Link } from 'react-router';
 
 const NewsCard = ({ news }) => {
     const {
@@ -10,6 +11,7 @@ const NewsCard = ({ news }) => {
         rating,
         published_date,
         details,
+        id,
     } = news;
 
     return (
@@ -45,7 +47,7 @@ const NewsCard = ({ news }) => {
 
             <p className="text-sm text-gray-700 mt-3">
                 {details.length > 200 ? details.slice(0, 200) + '...' : details}
-                <span className="text-blue-500 font-medium ml-1 cursor-pointer">Read More</span>
+                <Link to={`/news-details/${id}`} className="text-blue-500 font-medium ml-1 cursor-pointer">Read More</Link>
             </p>
 
             <div className="flex justify-between items-center mt-4 text-sm text-gray-600">

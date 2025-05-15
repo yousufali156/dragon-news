@@ -2,15 +2,44 @@ import React from 'react';
 import Marquee from 'react-fast-marquee';
 
 const LatestNews = () => {
+    const headlines = [
+        'ঢাকায় কালবৈশাখী ঝড়ে ব্যাপক ক্ষয়ক্ষতি',
+        'বাংলাদেশ-ভারত সীমান্তে নতুন চুক্তি সই',
+        'আগামীকাল থেকে এসএসসি পরীক্ষা শুরু',
+        'ডলার সংকটে রপ্তানিকারকরা বিপাকে',
+        'চট্টগ্রাম বন্দরে পণ্যজট নিরসনে নতুন উদ্যোগ',
+        'জাতীয় সংসদে বাজেট পেশ ২ জুন',
+        'রাজশাহীতে বন্যার আশঙ্কা, প্রস্তুত প্রশাসন',
+        'নতুন আইটি পার্ক উদ্বোধন করলেন প্রধানমন্ত্রী',
+        'বিদ্যুৎ ঘাটতিতে লোডশেডিং বাড়ছে',
+        'বাংলাদেশ বনাম শ্রীলঙ্কা ম্যাচে উত্তেজনা',
+        'রেমিট্যান্স প্রবাহে ইতিবাচক পরিবর্তন',
+        'বিশ্ববিদ্যালয় ভর্তি পরীক্ষার সময়সূচি প্রকাশ',
+        'সড়কে দুর্ঘটনায় নিহত ৩',
+        'নগরীতে জলাবদ্ধতা নিরসনে মেগা প্রকল্প',
+        'চাল ও তেলের দাম বৃদ্ধিতে ভোক্তা বিপাকে',
+        'প্রবাসী কর্মীদের জন্য নতুন সুযোগ',
+        'অভ্যন্তরীণ ফ্লাইটে ভাড়া কমানোর ঘোষণা',
+        'জাতীয় কবিতা উৎসব আগামী সপ্তাহে',
+        'শিক্ষা খাতে বরাদ্দ বাড়ানোর দাবি',
+        'রাজনৈতিক দলগুলোর মধ্যে সংলাপের উদ্যোগ',
+        'বন্যার্তদের মাঝে ত্রাণ বিতরণ চলছে',
+        'নতুন বই মেলায় পাঠকের ভিড়'
+    ];
+
     return (
         <div className='flex items-center gap-5 bg-base-200 p-3'>
-            <p className='text-base-100 bg-secondary px-3 py-2 text-white text-secondary'>Latest</p>
-            <Marquee className='flex gap-5 font-semibold' pauseOnHover={true}>
-                <p className='font-semibold'>Lorem, ipsum dolor sit amet consectetur  distinctio impedit atque dicta? A?</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium delectus ab sunt consequuntur reiciendis nihil vitae laudantium voluptate quisquam.</p>
+            <p className='bg-secondary px-3 py-2 text-white font-bold rounded'>সর্বশেষ</p>
+            <Marquee
+                className='flex gap-10 text-sm md:text-base font-medium'
+                pauseOnHover={true}
+                gradient={false}
+                speed={50}
+            >
+                {headlines.map((news, index) => (
+                    <span key={index} className="mx-4 whitespace-nowrap">{news}</span>
+                ))}
             </Marquee>
-
         </div>
     );
 };

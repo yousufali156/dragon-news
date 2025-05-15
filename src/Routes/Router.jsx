@@ -5,42 +5,51 @@ import CategoryNews from "../Pages/CategoryNews";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AuthLayout from "../Layouts/AuthLayout";
+import NewsDetails from "../Pages/NewsDetails";
+import PrivateRoute from "../Firebase/Provider/PrivateRoute";
+import Loading from "../Pages/Loading";
 
 const router = createBrowserRouter([
     {
         path: "/",
         Component: HomeLayouts,
-        children:[
+        children: [
             {
-                path:"",
+                path: "",
                 element: <Home></Home>,
             },
             {
-                path:"/category/:id",
-                element:<CategoryNews></CategoryNews> ,
-                loader: () => fetch("/news.json")
+                path: "/category/:id",
+                element: <CategoryNews></CategoryNews>,
+                loader: () => fetch("/news.json"),
+                hydrateFallbackElement: <Loading></Loading>,
             },
         ]
     },
     {
         path: "/auth",
         element: <AuthLayout></AuthLayout>,
-        children:[
+        children: [
             {
-                path:"/auth/login",
-                element:<Login></Login>
+                path: "/auth/login",
+                element: <Login></Login>
             },
             {
-                path:"/auth/register",
-                element:<Register></Register>
+                path: "/auth/register",
+                element: <Register></Register>
             },
         ]
 
-        
+
     },
     {
-        path: "/news",
-        element: <h2>News Layout</h2>
+        path: "/news-details/:id",
+        element: <PrivateRoute>
+            <NewsDetails></NewsDetails>
+        </PrivateRoute>,
+        loader: () => fetch("/news.json"),
+        hydrateFallbackElement: <Loading></Loading>,
+
     },
     {
         path: "/*",

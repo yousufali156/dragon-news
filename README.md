@@ -106,7 +106,12 @@ Follow the steps below to set up and run the project locally:
 git clone https://github.com/yousufali156/dragon-news.git
 cd dragon-news
 
-<br/>
+```
 
+📦 2. Install Dependencies
+bash
+Copy
+Edit
+npm install
 
 

@@ -97,35 +97,9 @@ dragon-news/
 
 ## ⚙️ Getting Started
 
-### 🧩 1. Clone the Repository
-```bash
-git clone https://github.com/shihabuddin-dev/the-dragon-news.git
-cd the-dragon-news
 
-📦 2. Install Dependencies
-
-npm install
-
-🔧 3. Run the Development Server
-
-npm run dev
-
-📦 4. Build for Production
-
-npm run build
-
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "your-app.firebaseapp.com",
-  projectId: "your-app-id",
-  storageBucket: "your-app.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-
-
-
-## 🔐 Netlify Setup
+<br/>
+### 🔐 Netlify Setup
 
 To deploy this project on [Netlify](https://www.netlify.com/), follow these steps:
 
@@ -154,7 +128,7 @@ To deploy this project on [Netlify](https://www.netlify.com/), follow these step
 
 ---
 
-## 💡 Contribution
+### 💡 Contribution
 
 Contributions are welcome!  
 Feel free to fork this repo and submit a pull request.  
@@ -169,7 +143,7 @@ You're free to use, modify, and distribute it as long as you include proper attr
 
 ---
 
-## 🙌 Acknowledgements
+### 🙌 Acknowledgements
 
 This project was made possible thanks to the following open-source technologies:
 
@@ -182,7 +156,7 @@ This project was made possible thanks to the following open-source technologies:
 - [Date-fns](https://date-fns.org) – Modern JavaScript date utility library.
 
 
-## 💰 Support
+### 💰 Support
 
 <p align="center">
   <a href="https://buymeacoffee.com/yousufali156" target="_blank">

@@ -94,11 +94,36 @@ dragon-news/
 
 
 ---
+<br/>
 
-## ⚙️ Getting Started
+## 🛠️ Getting Started
 
+Follow the steps below to set up and run the project locally:
+
+### 🧩 1. Clone the Repository
+
+```bash
+git clone https://github.com/shihabuddin-dev/the-dragon-news.git
+cd the-dragon-news
+<br/>
+📦 2. Install Dependencies
+```bash
+
+npm install
+<br/>
+🔧 3. Run the Development Server
+bash
+
+npm run dev
+<br/>
+📦 4. Build for Production
+```bash
+
+npm run build
 
 <br/>
+
+
 ### 🔐 Netlify Setup
 
 To deploy this project on [Netlify](https://www.netlify.com/), follow these steps:

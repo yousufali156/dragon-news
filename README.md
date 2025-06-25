@@ -154,10 +154,10 @@ To deploy this project on [Netlify](https://www.netlify.com/), follow these step
 
 5. **Set Environment Variables (if needed)**
    Go to "Site Settings" > "Environment Variables" and add:
-   - ```
+   
    - VITE_API_KEY=your_api_key`
    - `VITE_FIREBASE_AUTH=...` *(based on your project config)*
-   - ```
+  
 
 6. **Deploy**
    Click **“Deploy site”** — Netlify will handle the rest 🚀
@@ -192,10 +192,15 @@ This project was made possible thanks to the following open-source technologies:
 - [Date-fns](https://date-fns.org) – Modern JavaScript date utility library.
 
 
-### 💰 Support
+### 💰 Support Me
 
 <p align="center">
   <a href="https://buymeacoffee.com/yousufali156" target="_blank">
-    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217" />
   </a>
 </p>
+
+<p align="center">
+  <strong>If you like my work, consider buying me a coffee ☕ to support my projects!</strong>
+</p>
+

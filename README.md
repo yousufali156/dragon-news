@@ -103,89 +103,10 @@ Follow the steps below to set up and run the project locally:
 ### 🧩 1. Clone the Repository
 
 ```bash
-git clone https://github.com/shihabuddin-dev/the-dragon-news.git
-cd the-dragon-news
-<br/>
-📦 2. Install Dependencies
-```bash
-
-npm install
-<br/>
-🔧 3. Run the Development Server
-bash
-
-npm run dev
-<br/>
-📦 4. Build for Production
-```bash
-
-npm run build
+git clone https://github.com/yousufali156/dragon-news.git
+cd dragon-news
 
 <br/>
 
 
-### 🔐 Netlify Setup
-
-To deploy this project on [Netlify](https://www.netlify.com/), follow these steps:
-
-1. **Push your project to GitHub**
-   Make sure your latest code is committed and pushed to a GitHub repository.
-
-2. **Login to Netlify**
-   Go to [Netlify](https://www.netlify.com/) and log in using your GitHub account.
-
-3. **Create a new site**
-   - Click on **“Add new site”** > **“Import an existing project”**
-   - Choose **GitHub** and authorize access if prompted
-   - Select your **repository**
-
-4. **Configure the build settings**
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist` (if you're using Vite) or `build` (if using CRA)
-
-5. **Set Environment Variables (if needed)**
-   Go to "Site Settings" > "Environment Variables" and add:
-   - `VITE_API_KEY=your_api_key`
-   - `VITE_FIREBASE_AUTH=...` *(based on your project config)*
-
-6. **Deploy**
-   Click **“Deploy site”** — Netlify will handle the rest 🚀
-
----
-
-### 💡 Contribution
-
-Contributions are welcome!  
-Feel free to fork this repo and submit a pull request.  
-If you have any suggestions or find bugs, please open an issue — your feedback is appreciated!
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).  
-You're free to use, modify, and distribute it as long as you include proper attribution.
-
----
-
-### 🙌 Acknowledgements
-
-This project was made possible thanks to the following open-source technologies:
-
-- [React](https://reactjs.org) – A JavaScript library for building user interfaces.
-- [Tailwind CSS](https://tailwindcss.com) – A utility-first CSS framework for rapid UI development.
-- [DaisyUI](https://daisyui.com) – Tailwind CSS Components library.
-- [Firebase](https://firebase.google.com) – Backend-as-a-Service (BaaS) for authentication, database, and more.
-- [React Router](https://reactrouter.com) – Declarative routing for React.
-- [React Fast Marquee](https://www.npmjs.com/package/react-fast-marquee) – A React component for fast, customizable marquees.
-- [Date-fns](https://date-fns.org) – Modern JavaScript date utility library.
-
-
-### 💰 Support
-
-<p align="center">
-  <a href="https://buymeacoffee.com/yousufali156" target="_blank">
-    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
-  </a>
-</p>
 

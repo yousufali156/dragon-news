@@ -109,9 +109,16 @@ cd dragon-news
 ```
 
 📦 2. Install Dependencies
-bash
-Copy
-Edit
+
+```
 npm install
 
+```
+🔧 3. Run the Development Server
 
+```npm run dev```
+
+
+🏗️ 4. Build for Production
+
+```npm run build```

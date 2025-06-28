@@ -44,7 +44,7 @@
 
 ## 📸 Preview
 
-![Dragon News Preview](https://raw.githubusercontent.com/yousufali156/dragon-news/main/public/dragon-news-preview.png) <!-- Optional: Update with your own screenshot -->
+![Dragon News Preview](https://i.ibb.co/JFsPHD0L/dragon-news.jpg) 
 
 ---
 

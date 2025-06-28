@@ -6,6 +6,14 @@
 
 **Live Site** 👉 [https://dragon-news-y.netlify.app](https://dragon-news-y.netlify.app)
 
+
+---
+
+## 📸 Preview
+
+![Dragon News Preview](https://i.ibb.co/JFsPHD0L/dragon-news.jpg) 
+
+---
 ---
 
 ## 🌟 Features
@@ -40,13 +48,7 @@
 - 🕒 **Live Time Display**  
   Displays the current day, date, and time in the header bar.
 
----
 
-## 📸 Preview
-
-![Dragon News Preview](https://i.ibb.co/JFsPHD0L/dragon-news.jpg) 
-
----
 
 ## 🚀 Features
 
